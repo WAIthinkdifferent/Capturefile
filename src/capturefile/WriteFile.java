@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author hieu
+ * @author WAI
  */
 public class WriteFile {
     
@@ -34,7 +34,7 @@ public class WriteFile {
         }
     }
     public void kt(){   //kiem tra xem file luu lai sau khi capture co ton tai chua
-        File a = new File("D:\\copy\\log.raw");//duong dan kiem tra file
+        File a = new File("D:\\cp\\log.raw");//duong dan kiem tra file
         if (a.exists()){
             a.delete();//neu ton tai thi xoa
         }
@@ -58,7 +58,7 @@ public class WriteFile {
     }
     
     public void copyToOneFile(File source, String path) throws FileNotFoundException, IOException{
-        String sub_path = "D:\\copy\\log.raw";//duong dan luu file capture luu tat ca cac file quet duoc
+        String sub_path = "D:\\cp\\log.raw";//duong dan luu file capture luu tat ca cac file quet duoc
         File dest = new File(sub_path);
         
         dest.getParentFile().mkdirs();
@@ -96,7 +96,7 @@ public class WriteFile {
     public void copyCat(String fileName) throws IOException{
         kt();
         ArrayList<String> paths = new ArrayList();
-        String sub_path = "copy\\";
+        String sub_path = "cp\\";
         new File(sub_path).mkdir();
         String[] nameOfFile;
         paths = read_paths_from_file(fileName);
@@ -104,7 +104,7 @@ public class WriteFile {
         for(int i=0; i< paths.size(); i++){
             nameOfFile = paths.get(i).split(regex); 
             File fileSource = new File(paths.get(i));
-            File fileDest = new File(sub_path + "copy_" + nameOfFile[nameOfFile.length-1]+".raw");// theo dang copy_filename.raw
+            File fileDest = new File(sub_path + "cp_" + nameOfFile[nameOfFile.length-1]+".raw");// theo dang copy_filename.raw
             copyFile(fileSource, fileDest);
             copyToOneFile(fileSource, paths.get(i));
         }

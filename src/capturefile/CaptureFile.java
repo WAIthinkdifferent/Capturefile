@@ -9,11 +9,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 /**
  *
- * @author hieu
+ * @author WAI
  */
 public class CaptureFile {
-    private static String dirForScan = "D:\\demo\\nhom4";//Nhập đường dẫn cần capture
-    private static String paths_file = "D:\\demo\\all_paths.txt";// đường dẫn lưu cây nhị phân
+    private static String dirForScan = "D:\\test\\nhom9";//Nhập đường dẫn cần capture
+    private static String paths_file = "D:\\test\\all_paths.txt";// đường dẫn lưu cây nhị phân
     ArrayList<String> list = new ArrayList<>();
     WriteFile writeFile = new WriteFile();
     /**
